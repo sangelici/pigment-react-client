@@ -10,7 +10,7 @@ const Artworks = props => {
     axios(`${apiUrl}/artworks`)
       .then(res => setArtworks(res.data.artworks))
       .then(() => props.alert({ heading: 'Success', message: 'Art Collection!', variant: 'success' }))
-      .catch(() => props.alert({ heading: 'Failure', message: 'Failed to retrieve pieces', variant: 'failure' }))
+      .catch(() => props.alert({ heading: 'Failure', message: 'Failed to retrieve pieces', variant: 'danger' }))
   }, [])
 
   const artworksJsx = artworks.map(artwork => (
