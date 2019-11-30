@@ -8,6 +8,8 @@ import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
+// Artworks
+import Artworks from '../artwork/artworks.js'
 
 class App extends Component {
   constructor () {
@@ -53,6 +55,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute exact path='/artworks' user={user} render={() => (
+            <Artworks alert={this.alert} user={user}/>
           )} />
         </main>
       </Fragment>
