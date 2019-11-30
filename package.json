@@ -1,6 +1,6 @@
 {
-  "name": "pigment-react-client",
-  "homepage": "https://sangelici.github.io/pigment-react-client",
+  "name": "pigment-api",
+  "homepage": "https://sangelici.github.io/pigment-api",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
