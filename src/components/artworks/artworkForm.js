@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 
 const ArtworkForm = ({ artwork, handleChange, handleSubmit, cancelPath }) => (
   <form onSubmit={handleSubmit}>
-    <label htmlFor="name">Name:</label>
+    <label htmlFor="title">Title:</label>
     <input
-      id="name"
-      placeholder="Artwork Name..."
-      value={artwork.name}
-      name="name"
+      id="title"
+      placeholder="Artwork Title..."
+      value={artwork.title}
+      name="title"
       onChange={handleChange}
     />
     <input
