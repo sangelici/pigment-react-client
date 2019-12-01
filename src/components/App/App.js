@@ -11,6 +11,7 @@ import ChangePassword from '../ChangePassword/ChangePassword'
 // Artworks
 import Artworks from '../artwork/artworks.js'
 import Artwork from '../artwork/artwork.js'
+import CreateArtwork from '../artwork/createArtwork.js'
 
 class App extends Component {
   constructor () {
@@ -62,6 +63,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute exact path='/artworks/:id' user={user} render={() => (
             <Artwork alert={this.alert} user={user}/>
+          )} />
+          <AuthenticatedRoute exact path='/create-artwork' user={user} render={() => (
+            <CreateArtwork alert={this.alert} user={user} />
           )} />
         </main>
       </Fragment>
