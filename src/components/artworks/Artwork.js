@@ -11,7 +11,7 @@ const Artwork = props => {
   useEffect(() => {
     axios(`${apiUrl}/artworks/${props.match.params.id}`)
       .then(res => setArtwork(res.data.artwork))
-      .catch(() => props.alert({ heading: 'That didn\'t work', message: 'Couldn\'t retrieve the requested artwork', variant: 'danger' }))
+      .catch(() => props.alert({ heading: 'Error', message: 'Couldn\'t retrieve the requested artwork', variant: 'danger' }))
   }, [])
 
   const destroy = () => {

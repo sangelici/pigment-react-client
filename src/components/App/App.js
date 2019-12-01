@@ -8,6 +8,10 @@ import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
+// STYLESHEET
+import '../../index.scss'
+// LANDING
+import Homepage from '../Homepage/Homepage.js'
 // Artworks
 import Artworks from '../artworks/Artworks.js'
 import Artwork from '../artworks/Artwork.js'
@@ -36,7 +40,7 @@ class App extends Component {
 
     return (
       <Fragment>
-        <Header user={user} />
+        <Header />
         {alerts.map((alert, index) => (
           <AutoDismissAlert
             key={index}
@@ -46,6 +50,9 @@ class App extends Component {
           />
         ))}
         <main className="container">
+          <Route exact path='/' render={() => (
+            <Homepage />
+          )} />
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
           )} />
@@ -55,13 +62,15 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut alert={this.alert} clearUser={this.clearUser} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/change-password' render={() => (
+          <AuthenticatedRoute user={user} exact path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
           )} />
           <AuthenticatedRoute exact path='/artworks' user={user} render={() => (
-            <Artworks alert={this.alert}/>
+            <Fragment>
+              <Artworks alert={this.alert}/>
+            </Fragment>
           )} />
-          <AuthenticatedRoute path='/artworks/:id' user={user} render={() => (
+          <AuthenticatedRoute exact path='/artworks/:id' user={user} render={() => (
             <Artwork alert={this.alert} user={user}/>
           )} />
           <AuthenticatedRoute exact path='/create-artwork' user={user} render={() => (
