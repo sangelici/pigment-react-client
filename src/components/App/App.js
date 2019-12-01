@@ -9,9 +9,9 @@ import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 // Artworks
-import Artworks from '../artwork/artworks.js'
-import Artwork from '../artwork/artwork.js'
-import CreateArtwork from '../artwork/createArtwork.js'
+import Artworks from '../artworks/Artworks.js'
+import Artwork from '../artworks/Artwork.js'
+import CreateArtwork from '../artworks/CreateArtworks.js'
 
 class App extends Component {
   constructor () {

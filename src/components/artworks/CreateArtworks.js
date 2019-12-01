@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Redirect, withRouter } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig.js'
-import ArtworkForm from './BookForm.js'
+import ArtworkForm from './artworkForm.js'
 
 const CreateArtwork = props => {
   const [artwork, setArtwork] = useState({ name: '', description: '', medium: '', size: '', price: '' })
