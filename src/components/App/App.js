@@ -59,9 +59,9 @@ class App extends Component {
             <ChangePassword alert={this.alert} user={user} />
           )} />
           <AuthenticatedRoute exact path='/artworks' user={user} render={() => (
-            <Artworks alert={this.alert} user={user}/>
+            <Artworks alert={this.alert}/>
           )} />
-          <AuthenticatedRoute exact path='/artworks/:id' user={user} render={() => (
+          <AuthenticatedRoute path='/artworks/:id' user={user} render={() => (
             <Artwork alert={this.alert} user={user}/>
           )} />
           <AuthenticatedRoute exact path='/create-artwork' user={user} render={() => (

@@ -9,16 +9,16 @@ const Artwork = props => {
   const userId = props.user._id
 
   useEffect(() => {
-    axios(`${apiUrl}/arworks/${props.match.params.id}`)
+    axios(`${apiUrl}/artworks/${props.match.params.id}`)
       .then(res => setArtwork(res.data.artwork))
-      .catch(() => props.alert({ heading: 'Failure', message: 'Couldn\'t retrieve piece', variant: 'danger' }))
+      .catch(() => props.alert({ heading: 'That didn\'t work', message: 'Couldn\'t retrieve the requested artwork', variant: 'danger' }))
   }, [])
 
   const destroy = () => {
     axios({
       url: `${apiUrl}/artworks/${props.match.params.id}`,
       method: 'DELETE',
-      header: {
+      headers: {
         'Authorization': `Bearer ${props.user.token}`
       }
     })
@@ -29,23 +29,29 @@ const Artwork = props => {
       .catch(() => props.alert({ heading: 'Uh Oh', message: 'Something when wrong!', variant: 'danger' }))
   }
 
+  console.log(artwork)
+
   if (!artwork) {
     return <p>Loading...</p>
   }
 
   return (
-    <div>
-      <h2>{artwork.title}</h2>
-      <h3>{artwork.author}</h3>
-      {/* if the userId is the owner of the book, they will have access to the 'Delete' and 'Update options' */}
-      {userId === artwork.owner._id && (
-        <Fragment>
-          <Button href={`#artworks/${props.match.params.id}/edit`} varient="primary" className="mr-2">Update</Button>
-          <Button onClick={destroy} variant="danger" className="mr-2">Delete</Button>
-        </Fragment>
-      )}
-      {/* back button that will reroute user to the books list */}
-      <Button href="#/artworks" variant="secondary">Back</Button>
+    <div className="row">
+      <div className="col-sm-10 col-md-8 mx-auto mt-5">
+        <h2>{artwork.title}</h2>
+        <p>{artwork.description}</p>
+        <p>{artwork.medium}</p>
+        <p>{artwork.size}</p>
+        <p>{artwork.price}</p>
+        {userId === artwork.owner._id && (
+          <Fragment>
+            <Button href={`#artworks/${props.match.params.id}/edit`} varient="primary" className="mr-2">Update</Button>
+            <Button onClick={destroy} variant="danger" className="mr-2">Delete</Button>
+          </Fragment>
+        )}
+        {/* back button that will reroute user to the books list */}
+        <Button href="#/artworks" variant="secondary">Back</Button>
+      </div>
     </div>
   )
 }

@@ -6,7 +6,7 @@ const ArtworkForm = ({ artwork, handleChange, handleSubmit, cancelPath }) => (
     <label htmlFor="title">Title:</label>
     <input
       id="title"
-      placeholder="Artwork Title..."
+      placeholder="Title..."
       value={artwork.title}
       name="title"
       onChange={handleChange}
@@ -40,7 +40,7 @@ const ArtworkForm = ({ artwork, handleChange, handleSubmit, cancelPath }) => (
       onChange={handleChange}
     />
 
-    <button type="submit">Create</button>
+    <button type="submit">Submit</button>
     <Link to={cancelPath}>
       <button>Cancel</button>
     </Link>
