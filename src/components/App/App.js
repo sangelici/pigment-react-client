@@ -40,7 +40,7 @@ class App extends Component {
 
     return (
       <Fragment>
-        <Header />
+        <Header user={user}/>
         {alerts.map((alert, index) => (
           <AutoDismissAlert
             key={index}

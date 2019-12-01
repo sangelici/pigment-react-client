@@ -18,13 +18,13 @@ const unauthenticatedOptions = (
   </Fragment>
 )
 
-const alwaysOptions = (
-  <Fragment>
-  </Fragment>
-)
+// const alwaysOptions = (
+//   <Fragment>
+//   </Fragment>
+// )
 
 const Header = ({ user }) => (
-  <Navbar variant="dark">
+  <Navbar variant="dark" expand="md">
     <Navbar.Brand style={{ fontWeight: 'bolder' }} href="#">
       PGMT
     </Navbar.Brand>
@@ -32,7 +32,7 @@ const Header = ({ user }) => (
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto">
         { user && <span className="navbar-text mr-2">Welcome, {user.email}</span>}
-        {alwaysOptions}
+        {/* {alwaysOptions} */}
         { user ? authenticatedOptions : unauthenticatedOptions }
       </Nav>
     </Navbar.Collapse>
