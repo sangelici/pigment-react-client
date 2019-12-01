@@ -1,0 +1,21 @@
+body {
+  display: block; 
+}
+
+div {
+  &.artworks {
+    background-color: white;
+    border: 1px solid black;
+    height: 100%;
+    width: 95vw;
+    margin-bottom: 5.25vh;
+    margin-left: -130px;
+    margin-top: 20px;
+    padding: 20px;
+    position: relative;
+  }
+  & h1 {
+    display: flex;
+    justify-content: center;
+  }
+}

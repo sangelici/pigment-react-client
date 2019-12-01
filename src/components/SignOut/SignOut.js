@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 
 import { signOut } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
+import '../Homepage/Stylesheet.scss'
 
 class SignOut extends Component {
   componentDidMount () {

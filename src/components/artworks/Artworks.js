@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import ListGroup from 'react-bootstrap/ListGroup'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
+import './Stylesheet.scss'
 
 const Artworks = props => {
   const [artworks, setArtworks] = useState([])
@@ -21,11 +22,13 @@ const Artworks = props => {
 
   return (
     <Fragment>
-      <h1>Art Gallery!</h1>
-      <Link to="/create-artwork">+ Listing</Link>
-      <ListGroup>
-        {artworksJsx}
-      </ListGroup>
+      <div>
+        <ListGroup className="artworks">
+          <h1>Gallery</h1>
+          <Link to="/create-artwork">+Listing</Link>
+          {artworksJsx}
+        </ListGroup>
+      </div>
     </Fragment>
   )
 }
