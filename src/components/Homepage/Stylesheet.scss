@@ -38,7 +38,7 @@ body {
   clip-path: inset(10em);
   display: flex;
   filter: blur($blur);
-  height: 95vh;
+  height: 93vh;
   justify-content: center;
   width: 100vw;
 }
@@ -66,7 +66,7 @@ body {
   }
 
   > .main-title {
-    color: 'red';
+    color: red;
     font-size: 4em;
     font-weight: 700;
     letter-spacing: .75em;
@@ -76,7 +76,7 @@ body {
   }
 
   > .links {
-    color: 'white';
+    color: white;
     display: flex;
     font-size: 1.5em;
     font-weight: bolder;

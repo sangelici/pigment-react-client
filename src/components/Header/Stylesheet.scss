@@ -1,9 +1,12 @@
-body, html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+@import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans&display=swap');
+
+a.nav-link{
+  font-size: 15px;
+  font-family: 'Quattrocento Sans', sans-serif;
+  font-weight: bolder;
 }
 
 nav {
+  background-color: rgba(2, 173, 241, .6);
   width: 100vw;
 }
