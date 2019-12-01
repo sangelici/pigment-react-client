@@ -1,7 +1,25 @@
 @import '~bootstrap/scss/bootstrap';
 
+body,
 html {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+div {
+  &.row {
+    margin-bottom: 38.75vh;
+  }
+
+  &.sign-in {
+    margin-bottom: 49.75vh;
+  }
+}
+
+.up-and-in {
+  background-color: rgba(255, 255, 255, .7);
+  border: 1px solid black;
+  font-weight: bolder;
+  padding: 20px;
 }
