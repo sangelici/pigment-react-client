@@ -20,7 +20,7 @@ body {
   align-items: center;
   background-image: url($image);
   background-position: center;
-  background-size: cover;
+  background-size: 100% 100%;
   display: flex;
   font-family: 'Rajdhani', sans-serif;
   justify-content: center;
@@ -69,8 +69,8 @@ body {
 
   > .main-title {
     color: red;
-    font-size: 4em;
-    font-weight: 700;
+    font-size: 5.5em;
+    font-weight: bolder;
     letter-spacing: .75em;
     padding-left: .75em;
     position: absolute;

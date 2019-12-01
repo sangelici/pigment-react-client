@@ -1,5 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 
+// Sign-up and Sign-in Forms
 div {
   &.row {
     margin-bottom: 38.75vh;
@@ -11,8 +12,13 @@ div {
 }
 
 .up-and-in {
-  background-color: rgba(255, 255, 255, .7);
+  background-color: rgba(255, 255, 255, .8);
   border: 1px solid black;
   font-weight: bolder;
   padding: 20px;
+
+  & h3 {
+    display: flex;
+    justify-content: center;
+  }
 }
