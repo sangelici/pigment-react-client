@@ -16,6 +16,7 @@ import Homepage from '../Homepage/Homepage.js'
 import Artworks from '../artworks/Artworks.js'
 import Artwork from '../artworks/Artwork.js'
 import CreateArtwork from '../artworks/CreateArtworks.js'
+import ArtworkEdit from '../artworks/artworkEdit.js'
 
 class App extends Component {
   constructor () {
@@ -65,16 +66,17 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
           )} />
-          <AuthenticatedRoute path='/artworks' user={user} render={() => (
-            <Fragment>
-              <Artworks alert={this.alert}/>
-            </Fragment>
+          <AuthenticatedRoute exact path='/artworks' user={user} render={() => (
+            <Artworks alert={this.alert}/>
           )} />
           <AuthenticatedRoute exact path='/artworks/:id' user={user} render={() => (
             <Artwork alert={this.alert} user={user}/>
           )} />
           <AuthenticatedRoute exact path='/create-artwork' user={user} render={() => (
             <CreateArtwork alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute exact path='/artworks/:id/edit' user={user} render={() => (
+            <ArtworkEdit alert={this.alert} user={user} />
           )} />
         </main>
       </Fragment>

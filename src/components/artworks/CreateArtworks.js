@@ -3,7 +3,7 @@ import { Redirect, withRouter } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig.js'
 /* uses the BookForm to create said book */
-import ArtworkForm from './ArtworkForm.js'
+import ArtworkForm from './artworkForm.js'
 
 const CreateArtwork = props => {
   const [ artwork, setArtwork ] = useState({ title: '', description: '', medium: '', size: '', price: '' })
