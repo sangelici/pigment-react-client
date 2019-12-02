@@ -1,6 +1,7 @@
 import React, { useEffect, useState, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import ListGroup from 'react-bootstrap/ListGroup'
+import { Container, Row, Col } from 'react-bootstrap'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import './Stylesheet.scss'
@@ -15,9 +16,9 @@ const Artworks = props => {
   }, [])
 
   const artworksJsx = artworks.map(artwork => (
-    <ListGroup.Item key={artwork._id} as={'a'} href={`#/artworks/${artwork._id}`}>
+    <Col xs={4} key={artwork._id} as={'a'} href={`#/artworks/${artwork._id}`}>
       {artwork.title}
-    </ListGroup.Item>
+    </Col>
   ))
 
   return (
@@ -26,7 +27,11 @@ const Artworks = props => {
         <ListGroup className="artworks">
           <h1>Gallery</h1>
           <Link to="/create-artwork">+Listing</Link>
-          {artworksJsx}
+          <Container fluid={true}>
+            <Row>
+              {artworksJsx}
+            </Row>
+          </Container>
         </ListGroup>
       </div>
     </Fragment>

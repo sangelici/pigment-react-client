@@ -9,7 +9,13 @@ const Artwork = props => {
   const userId = props.user._id
 
   useEffect(() => {
-    axios(`${apiUrl}/artworks/${props.match.params.id}`)
+    axios({
+      url: `${apiUrl}/artworks/${props.match.params.id}`,
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${props.user.token}`
+      }
+    })
       .then(res => setArtwork(res.data.artwork))
       .catch(() => props.alert({ heading: 'Error', message: 'Couldn\'t retrieve the requested artwork', variant: 'danger' }))
   }, [])
@@ -29,7 +35,7 @@ const Artwork = props => {
       .catch(() => props.alert({ heading: 'Uh Oh', message: 'Something when wrong!', variant: 'danger' }))
   }
 
-  console.log(artwork)
+  // console.log(artwork)
 
   if (!artwork) {
     return <p>Loading...</p>
