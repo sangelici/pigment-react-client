@@ -8,6 +8,7 @@ import './Stylesheet.scss'
 
 const Artworks = props => {
   const [artworks, setArtworks] = useState([])
+
   useEffect(() => {
     axios(`${apiUrl}/artworks`)
       .then(res => setArtworks(res.data.artworks))

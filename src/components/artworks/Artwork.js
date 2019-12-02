@@ -42,13 +42,14 @@ const Artwork = props => {
   }
 
   return (
-    <div className="row">
+    <div className="row one-artwork">
       <div className="col-sm-10 col-md-8 mx-auto mt-5">
         <h2>{artwork.title}</h2>
+        <p>${artwork.price}.00</p>
+        <hr></hr>
         <p>{artwork.description}</p>
         <p>{artwork.medium}</p>
-        <p>{artwork.size}</p>
-        <p>{artwork.price}</p>
+        <p>Size: {artwork.size}</p>
         {userId === artwork.owner._id && (
           <Fragment>
             <Button href={`#artworks/${props.match.params.id}/edit`} varient="primary" className="mr-2">Update</Button>

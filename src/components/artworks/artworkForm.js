@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import './Stylesheet.scss'
 
 const ArtworkForm = ({ artwork, handleChange, handleSubmit, cancelPath }) => (
   <div className="row">
     <div className="col-sm-10 col-md-8 mx-auto mt-5 up-and-in">
-      <h3>Create New Listing</h3>
+      <h3>New Listing</h3>
       <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="title">
+        <Form.Group>
           <Form.Label htmlFor="title">Title:</Form.Label>
           <Form.Control
             id="title"
@@ -19,7 +20,7 @@ const ArtworkForm = ({ artwork, handleChange, handleSubmit, cancelPath }) => (
             onChange={handleChange}
           />
         </Form.Group>
-        <Form.Group controlId="description">
+        {/* }<Form.Group>
           <Form.Label htmlFor="description">Description:</Form.Label>
           <Form.Control
             required
@@ -29,8 +30,8 @@ const ArtworkForm = ({ artwork, handleChange, handleSubmit, cancelPath }) => (
             name="description"
             onChange={handleChange}
           />
-        </Form.Group>
-        <Form.Group controlId="medium">
+        </Form.Group> */}
+        <Form.Group>
           <Form.Label htmlFor="medium">Medium:</Form.Label>
           <Form.Control
             required
@@ -41,7 +42,7 @@ const ArtworkForm = ({ artwork, handleChange, handleSubmit, cancelPath }) => (
             onChange={handleChange}
           />
         </Form.Group>
-        <Form.Group controlId="size">
+        <Form.Group>
           <Form.Label htmlFor="size">Size:</Form.Label>
           <Form.Control
             required
@@ -52,32 +53,47 @@ const ArtworkForm = ({ artwork, handleChange, handleSubmit, cancelPath }) => (
             onChange={handleChange}
           />
         </Form.Group>
-        <Form.Group controlId="price">
+        <Form.Group>
           <Form.Label htmlFor="price">Price:</Form.Label>
           <Form.Control
             required
             id="price"
-            placeholder="$00.00"
+            placeholder="0000"
             type="number"
             value={artwork.price}
             name="price"
             onChange={handleChange}
           />
         </Form.Group>
+      </Form>
+      <Form.Label htmlFor="description">Description:</Form.Label>
+      <br></br>
+      <textarea
+        required
+        id="description"
+        placeholder="Description..."
+        value={artwork.description}
+        name="description"
+        onChange={handleChange}
+        rows="4"
+        cols="116"
+      >
+      </textarea>
+      <br></br>
+      <br></br>
+      <Button
+        variant="primary"
+        type="submit"
+      >
+        Submit
+      </Button>
+      <Link to={cancelPath}>
         <Button
           variant="primary"
-          type="submit"
         >
-          Submit
+          Cancel
         </Button>
-        <Link to={cancelPath}>
-          <Button
-            variant="primary"
-          >
-            Cancel
-          </Button>
-        </Link>
-      </Form>
+      </Link>
     </div>
   </div>
 )
