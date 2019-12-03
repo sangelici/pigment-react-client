@@ -11,6 +11,16 @@ const ArtworkForm = ({ artwork, handleChange, handleSubmit, cancelPath }) => (
       <h3>New Listing</h3>
       <Form onSubmit={handleSubmit}>
         <Form.Group>
+          <Form.Label htmlFor="image file"></Form.Label>
+          <Form.Control
+            type="file"
+            className="form-control mb-4 alt-color"
+            value={artwork.fileData}
+            name="file"
+            onChange={handleChange}
+          />
+        </Form.Group>
+        <Form.Group>
           <Form.Label htmlFor="title">Title:</Form.Label>
           <Form.Control
             id="title"
@@ -20,17 +30,16 @@ const ArtworkForm = ({ artwork, handleChange, handleSubmit, cancelPath }) => (
             onChange={handleChange}
           />
         </Form.Group>
-        {/* }<Form.Group>
-          <Form.Label htmlFor="description">Description:</Form.Label>
+        <Form.Group>
+          <Form.Label htmlFor="artist">Artist:</Form.Label>
           <Form.Control
-            required
-            id="description"
-            placeholder="Description..."
-            value={artwork.description}
-            name="description"
+            id="artist"
+            placeholder="Artist..."
+            value={artwork.artist}
+            name="artist"
             onChange={handleChange}
           />
-        </Form.Group> */}
+        </Form.Group>
         <Form.Group>
           <Form.Label htmlFor="medium">Medium:</Form.Label>
           <Form.Control
@@ -65,35 +74,35 @@ const ArtworkForm = ({ artwork, handleChange, handleSubmit, cancelPath }) => (
             onChange={handleChange}
           />
         </Form.Group>
-      </Form>
-      <Form.Label htmlFor="description">Description:</Form.Label>
-      <br></br>
-      <textarea
-        required
-        id="description"
-        placeholder="Description..."
-        value={artwork.description}
-        name="description"
-        onChange={handleChange}
-        rows="4"
-        cols="116"
-      >
-      </textarea>
-      <br></br>
-      <br></br>
-      <Button
-        variant="primary"
-        type="submit"
-      >
-        Submit
-      </Button>
-      <Link to={cancelPath}>
+        <Form.Label htmlFor="description">Description:</Form.Label>
+        <br></br>
+        <textarea
+          required
+          id="description"
+          placeholder="Description..."
+          value={artwork.description}
+          name="description"
+          onChange={handleChange}
+          rows="4"
+          cols="116"
+        >
+        </textarea>
+        <br></br>
+        <br></br>
         <Button
           variant="primary"
+          type="submit"
         >
-          Cancel
+          Submit
         </Button>
-      </Link>
+        <Link to={cancelPath}>
+          <Button
+            variant="primary"
+          >
+            Cancel
+          </Button>
+        </Link>
+      </Form>
     </div>
   </div>
 )

@@ -2,16 +2,14 @@ import React, { useState } from 'react'
 import { Redirect, withRouter } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig.js'
-/* uses the BookForm to create said book */
 import ArtworkForm from './artworkForm.js'
 
 const CreateArtwork = props => {
-  const [ artwork, setArtwork ] = useState({ title: '', description: '', medium: '', size: '', price: '' })
+  const [ artwork, setArtwork ] = useState({ fileName: '', fileType: '', title: '', artist: '', description: '', medium: '', size: '', price: '' })
   const [ createArtworkId ] = useState(null)
 
   const handleChange = event => {
     event.persist()
-
     setArtwork({ ...artwork, [event.target.name]: event.target.value })
   }
 
@@ -21,7 +19,7 @@ const CreateArtwork = props => {
       url: `${apiUrl}/artworks`,
       method: 'POST',
       headers: {
-        'Authorization': `Token token=${props.user.token}`
+        'Authorization': `Bearer ${props.user.token}`
       },
       data: { artwork }
     })

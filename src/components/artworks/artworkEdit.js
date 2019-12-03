@@ -5,7 +5,7 @@ import apiUrl from '../../apiConfig.js'
 import ArtworkForm from './artworkForm.js'
 
 const ArtworkEdit = props => {
-  const [artwork, setArtwork] = useState({ title: '', description: '', medium: '', size: '', price: '' })
+  const [artwork, setArtwork] = useState({ title: '', artist: '', description: '', medium: '', size: '', price: '' })
   const [updated, setUpdated] = useState(false)
 
   useEffect(() => {
