@@ -56,7 +56,6 @@ const Artwork = props => {
             <Button onClick={destroy} variant="danger" className="mr-2">Delete</Button>
           </Fragment>
         )}
-        {/* back button that will reroute user to the books list */}
         <Button href="#/artworks" variant="secondary">Back</Button>
       </div>
     </div>
