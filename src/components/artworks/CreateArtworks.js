@@ -5,8 +5,7 @@ import apiUrl from '../../apiConfig.js'
 import ArtworkForm from './artworkForm.js'
 
 const CreateArtwork = props => {
-  const [ artwork, setArtwork ] = useState({ title: '', artist: '', description: '', medium: '', size: '', price: '' })
-  const [ file ] = useState(null)
+  const [ artwork, setArtwork ] = useState({ file: '', title: '', artist: '', description: '', medium: '', size: '', price: '' })
   const [ createArtworkId ] = useState(null)
 
   const handleChange = event => {
@@ -17,8 +16,10 @@ const CreateArtwork = props => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    const formData = new FormData()
-    formData.append('file', file)
+    const form = document.getElementById('artwork-form')
+    const formData = new FormData(form)
+    // formData.append('file', artwork.file)
+    // formData.append('artwork', artwork)
 
     console.log(artwork)
     axios({
@@ -28,8 +29,9 @@ const CreateArtwork = props => {
       headers: {
         'Authorization': `Bearer ${props.user.token}`
       },
-      data: { artwork }
+      data: formData
     })
+      .then(console.log)
       .then(res => {
         props.alert({ heading: 'Success', message: 'Listing created', variant: 'success' })
         props.history.push(`/artworks/${res.data.artwork._id}`)

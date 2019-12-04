@@ -5,7 +5,7 @@ import apiUrl from '../../apiConfig.js'
 import ArtworkForm from './artworkForm.js'
 
 const ArtworkEdit = props => {
-  const [artwork, setArtwork] = useState({ title: '', artist: '', description: '', medium: '', size: '', price: '' })
+  const [artwork, setArtwork] = useState({ file: '', title: '', artist: '', description: '', medium: '', size: '', price: '' })
   const [updated, setUpdated] = useState(false)
 
   useEffect(() => {
@@ -21,13 +21,20 @@ const ArtworkEdit = props => {
 
   const handleSubmit = event => {
     event.preventDefault()
+    const form = document.getElementById('artwork-form')
+    const formData = new FormData(form)
+    // formData.append('file', artwork.file)
+    // formData.append('artwork', artwork)
+
+    console.log(artwork)
     axios({
       url: `${apiUrl}/artworks/${props.match.params.id}`,
+      formData,
       method: 'PATCH',
       headers: {
         'Authorization': `Token token=${props.user.token}`
       },
-      data: { artwork }
+      data: formData
     })
       .then(res => {
         props.alert({ heading: 'Success', message: 'Listing updated', variant: 'success' })

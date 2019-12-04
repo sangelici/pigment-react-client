@@ -1,7 +1,7 @@
 import React, { useEffect, useState, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import ListGroup from 'react-bootstrap/ListGroup'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col, Image } from 'react-bootstrap'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import './Stylesheet.scss'
@@ -18,6 +18,7 @@ const Artworks = props => {
 
   const artworksJsx = artworks.map(artwork => (
     <Col xs={4} key={artwork._id} as={'a'} href={`#/artworks/${artwork._id}`}>
+      <Image src={'https://ssa-pigment-bucket.s3.amazonaws.com/1575491439281-yum.jpg'} width="200px" height="200px" />
       {artwork.title}
     </Col>
   ))
