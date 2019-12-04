@@ -5,18 +5,25 @@ import apiUrl from '../../apiConfig.js'
 import ArtworkForm from './artworkForm.js'
 
 const CreateArtwork = props => {
-  const [ artwork, setArtwork ] = useState({ fileName: '', fileType: '', title: '', artist: '', description: '', medium: '', size: '', price: '' })
+  const [ artwork, setArtwork ] = useState({ title: '', artist: '', description: '', medium: '', size: '', price: '' })
+  const [ file ] = useState(null)
   const [ createArtworkId ] = useState(null)
 
   const handleChange = event => {
     event.persist()
+    // console.log(event.target.value)
     setArtwork({ ...artwork, [event.target.name]: event.target.value })
   }
 
   const handleSubmit = event => {
     event.preventDefault()
+    const formData = new FormData()
+    formData.append('file', file)
+
+    console.log(artwork)
     axios({
       url: `${apiUrl}/artworks`,
+      formData,
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${props.user.token}`

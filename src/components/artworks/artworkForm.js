@@ -9,13 +9,13 @@ const ArtworkForm = ({ artwork, handleChange, handleSubmit, cancelPath }) => (
   <div className="row">
     <div className="col-sm-10 col-md-8 mx-auto mt-5 up-and-in">
       <h3>New Listing</h3>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} encType="multipart/form-data">
         <Form.Group>
           <Form.Label htmlFor="image file"></Form.Label>
           <Form.Control
             type="file"
             className="form-control mb-4 alt-color"
-            value={artwork.fileData}
+            value={artwork.fileType}
             name="file"
             onChange={handleChange}
           />
@@ -84,7 +84,6 @@ const ArtworkForm = ({ artwork, handleChange, handleSubmit, cancelPath }) => (
           name="description"
           onChange={handleChange}
           rows="4"
-          cols="116"
         >
         </textarea>
         <br></br>

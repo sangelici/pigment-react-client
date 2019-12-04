@@ -43,6 +43,9 @@ const Artwork = props => {
 
   return (
     <div className="row one-artwork">
+      <div>
+        <img src={artwork.fileType} />
+      </div>
       <div className="col-sm-10 col-md-8 mx-auto mt-5">
         <h2>{artwork.title}</h2>
         <p>${artwork.price}.00</p>
