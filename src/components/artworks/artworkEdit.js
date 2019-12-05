@@ -9,9 +9,15 @@ const ArtworkEdit = props => {
   const [updated, setUpdated] = useState(false)
 
   useEffect(() => {
-    axios(`${apiUrl}/artworks/${props.match.params.id}`)
-      .then(res => setArtwork(res.body.artwork))
-      .catch(console.error)
+    axios({
+      url: `${apiUrl}/artworks/${props.match.params.id}`,
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${props.user.token}`
+      }
+    })
+      .then(res => setArtwork(res.data.artwork))
+      .catch(() => props.alert({ heading: 'Error', message: 'Couldn\'t retrieve the requested artwork', variant: 'danger' }))
   }, [])
 
   const handleChange = event => {
@@ -21,26 +27,28 @@ const ArtworkEdit = props => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    const form = document.getElementById('artwork-form')
-    const formData = new FormData(form)
-    // formData.append('file', artwork.file)
-    // formData.append('artwork', artwork)
+    console.log(event.target)
+    const formData = new FormData(event.target)
+    const iterator = formData.entries()
+    console.log(iterator.next().value)
+    console.log(iterator.next().value)
+    console.log(iterator.next().value)
 
-    console.log(artwork)
     axios({
       url: `${apiUrl}/artworks/${props.match.params.id}`,
-      formData,
       method: 'PATCH',
+      contentType: false,
+      processData: false,
       headers: {
-        'Authorization': `Token token=${props.user.token}`
+        'Authorization': `Bearer ${props.user.token}`
       },
       data: formData
     })
       .then(res => {
-        props.alert({ heading: 'Success', message: 'Listing updated', variant: 'success' })
         setUpdated(true)
+        props.alert({ heading: 'Success', message: 'Listing updated', variant: 'success' })
       })
-      .catch(() => props.alert({ heading: 'Uh oh', message: 'Something went wrong, please come back later', variant: 'danger' }))
+      .catch(props.alert({ heading: 'Uh oh', message: 'Something went wrong, please come back later', variant: 'danger' }))
   }
 
   if (updated) {

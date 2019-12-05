@@ -9,13 +9,11 @@ const ArtworkForm = ({ artwork, handleChange, handleSubmit, cancelPath }) => (
   <div className="row">
     <div className="col-sm-10 col-md-8 mx-auto mt-5 up-and-in">
       <h3>New Listing</h3>
-      <Form id="artwork-form" onSubmit={handleSubmit} encType="multipart/form-data">
-        <Form.Group id="some-thing">
-          <Form.Label htmlFor="image file"></Form.Label>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group encType="multipart/form-data">
+          <Form.Label>Image:</Form.Label>
           <Form.Control
             type="file"
-            className="form-control mb-4 alt-color"
-            value={artwork.file}
             name="file"
             onChange={handleChange}
           />

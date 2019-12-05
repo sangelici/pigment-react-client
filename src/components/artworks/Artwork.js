@@ -43,7 +43,7 @@ const Artwork = props => {
 
   return (
     <div className="row one-artwork">
-      <div>IMAGE:{artwork.file}</div>
+      <div>IMAGE:<img src={artwork.fileUrl} width={200} height={200}/> </div>
       <div className="col-sm-10 col-md-8 mx-auto mt-5">
         <h2>{artwork.title}</h2>
         <p>{artwork.artist}</p>

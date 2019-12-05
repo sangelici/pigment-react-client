@@ -16,22 +16,20 @@ const CreateArtwork = props => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    const form = document.getElementById('artwork-form')
-    const formData = new FormData(form)
-    // formData.append('file', artwork.file)
-    // formData.append('artwork', artwork)
+    console.log(event.target)
+    const formData = new FormData(event.target)
+    console.log(formData)
 
-    console.log(artwork)
     axios({
       url: `${apiUrl}/artworks`,
-      formData,
       method: 'POST',
+      contentType: false,
+      processData: false,
       headers: {
         'Authorization': `Bearer ${props.user.token}`
       },
       data: formData
     })
-      .then(console.log)
       .then(res => {
         props.alert({ heading: 'Success', message: 'Listing created', variant: 'success' })
         props.history.push(`/artworks/${res.data.artwork._id}`)
