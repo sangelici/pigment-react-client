@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
-import './Stylesheet.scss'
+import './HomepageStylesheet.scss'
 
 const Homepage = props => (
   <Fragment>
