@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom'
 import { signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
 
+import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import '../../index.scss'
@@ -83,6 +84,9 @@ class SignIn extends Component {
               Submit
             </Button>
           </Form>
+        </div>
+        <div className="col-sm-10 col-md-8 mx-auto mt-5 up-and-in">
+          <Nav.Link href="#sign-up">Sign Up</Nav.Link>
         </div>
       </div>
     )
