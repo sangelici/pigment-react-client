@@ -17,10 +17,11 @@ const Artworks = props => {
   }, [])
 
   const artworksJsx = artworks.map(artwork => (
-    <Col xs={4} key={artwork._id} as={'a'} href={`#/artworks/${artwork._id}`}>
-      <img src={artwork.fileUrl} width="200px" height="200px"/>
-      <br></br>
-      {artwork.title}
+    <Col className="artworks" xs={3} fluid={true} key={artwork._id} as={'a'} href={`#/artworks/${artwork._id}`}>
+      <div>
+        <img src={artwork.fileUrl} width="300px" height="400px"/>
+        <p>{artwork.title}</p>
+      </div>
     </Col>
   ))
 
@@ -29,7 +30,8 @@ const Artworks = props => {
       <div>
         <ListGroup className="artworks">
           <h1>Gallery</h1>
-          <Link to="/create-artwork">+Listing</Link>
+          <hr></hr>
+          <Link className="create" to="/create-artwork">+Listing</Link>
           <Container fluid={true}>
             <Row>
               {artworksJsx}

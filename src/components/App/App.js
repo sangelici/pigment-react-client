@@ -41,7 +41,6 @@ class App extends Component {
 
     return (
       <Fragment>
-        <Header user={user}/>
         {alerts.map((alert, index) => (
           <AutoDismissAlert
             key={index}
@@ -50,7 +49,7 @@ class App extends Component {
             message={alert.message}
           />
         ))}
-        <main className="container">
+        <main className="container-fluid">
           <Route exact path='/' render={() => (
             <Homepage />
           )} />
@@ -67,16 +66,28 @@ class App extends Component {
             <ChangePassword alert={this.alert} user={user} />
           )} />
           <AuthenticatedRoute exact path='/artworks' user={user} render={() => (
-            <Artworks alert={this.alert}/>
+            <Fragment>
+              <Header user={user}/>
+              <Artworks alert={this.alert}/>
+            </Fragment>
           )} />
           <AuthenticatedRoute exact path='/artworks/:id' user={user} render={() => (
-            <Artwork alert={this.alert} user={user}/>
+            <Fragment>
+              <Header user={user}/>
+              <Artwork alert={this.alert} user={user}/>
+            </Fragment>
           )} />
           <AuthenticatedRoute exact path='/create-artwork' user={user} render={() => (
-            <CreateArtwork alert={this.alert} user={user} />
+            <Fragment>
+              <Header user={user}/>
+              <CreateArtwork alert={this.alert} user={user} />
+            </Fragment>
           )} />
           <AuthenticatedRoute exact path='/artworks/:id/edit' user={user} render={() => (
-            <ArtworkEdit alert={this.alert} user={user} />
+            <Fragment>
+              <Header user={user}/>
+              <ArtworkEdit alert={this.alert} user={user} />
+            </Fragment>
           )} />
         </main>
       </Fragment>

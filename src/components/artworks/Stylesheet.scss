@@ -1,6 +1,13 @@
-// Index View
-a.col-4 {
-  height: 30vh;
+a {
+  & a .col-3 {
+    height: 40vh;
+    margin: 20px;
+  }
+
+  &.create {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 body {
@@ -12,27 +19,38 @@ div {
     background-color: white;
     border: 1px solid black;
     height: 100%;
-    width: 95vw;
+    width: 96vw;
     margin-bottom: 5.25vh;
-    margin-left: -9vw;
+    margin-left: 2vw;
     margin-top: 20px;
     padding: 20px;
     position: relative;
+
+    & hr {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      border-top: 1px solid rgba( 1, 1, 1, 1);
+      width: 100%;
+    }
   }
+
   & h1 {
     display: flex;
     justify-content: center;
   }
-}
 
-// Show View
-div {
-  &.one-artwork{
+  // Show one
+  &.one-artwork {
     background-color: white;
     border: 1px solid black;
     margin: 0;
     margin-top: 20px;
     padding: 20px;
+  }
+
+  &.row{
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -41,4 +59,22 @@ textarea {
   border: 1px solid #c7c7c7;
   border-radius: 10px;
   width: 49.8vw;
+}
+
+.col-3 {
+  border: 1px solid black;
+  height: 60vh;
+  margin: 1vh 3vw;
+  padding: 0;
+
+  & img {
+    border: 1px solid black;
+    margin: 2vh auto;
+    margin-left: 1.28vw;
+  }
+
+  & p {
+    display: flex;
+    justify-content: center;
+  }
 }
