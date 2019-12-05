@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300&display=swap');
 @import '~bootstrap/scss/bootstrap';
 
 // Sign-up and Sign-in Forms
@@ -13,6 +14,16 @@ div {
 
 .container-fluid{
   padding: 0;
+}
+
+.toggle {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, .8);
+  border: 1px solid black;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: bolder;
+  padding: 20px;
 }
 
 .up-and-in {

@@ -17,7 +17,7 @@ const Artworks = props => {
   }, [])
 
   const artworksJsx = artworks.map(artwork => (
-    <Col className="artworks" xs={3} fluid={true} key={artwork._id} as={'a'} href={`#/artworks/${artwork._id}`}>
+    <Col className="artworks" xs={3} key={artwork._id} as={'a'} href={`#/artworks/${artwork._id}`}>
       <div>
         <img src={artwork.fileUrl} width="300px" height="400px"/>
         <p>{artwork.title}</p>

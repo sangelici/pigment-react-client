@@ -85,8 +85,8 @@ class SignIn extends Component {
             </Button>
           </Form>
         </div>
-        <div className="col-sm-10 col-md-8 mx-auto mt-5 up-and-in">
-          <Nav.Link href="#sign-up">Sign Up</Nav.Link>
+        <div className="col-sm-10 col-md-8 mx-auto mt-5 toggle">
+          <Nav.Link href="#sign-up">Don&apos;t have an account yet? Sign Up</Nav.Link>
         </div>
       </div>
     )
