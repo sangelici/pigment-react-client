@@ -16,9 +16,9 @@ const CreateArtwork = props => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    console.log(event.target)
+    // console.log(event.target)
     const formData = new FormData(event.target)
-    console.log(formData)
+    // console.log(formData)
 
     axios({
       url: `${apiUrl}/artworks`,

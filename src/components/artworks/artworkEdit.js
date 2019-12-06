@@ -27,12 +27,12 @@ const ArtworkEdit = props => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    console.log(event.target)
+    // console.log(event.target)
     const formData = new FormData(event.target)
-    const iterator = formData.entries()
-    console.log(iterator.next().value)
-    console.log(iterator.next().value)
-    console.log(iterator.next().value)
+    // const iterator = formData.entries()
+    // console.log(iterator.next().value)
+    // console.log(iterator.next().value)
+    // console.log(iterator.next().value)
 
     axios({
       url: `${apiUrl}/artworks/${props.match.params.id}`,

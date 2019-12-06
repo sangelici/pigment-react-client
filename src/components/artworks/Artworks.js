@@ -36,7 +36,7 @@ const Artworks = props => {
           <hr></hr>
           <div className="gallery-blurb">
             <h5>Explore the collection!</h5>
-            <p>Our gallery is fully of of pieces made by independent  artists all over</p>
+            <p>Our gallery is full of pieces made by independent artists all over</p>
           </div>
           <Container fluid={true}>
             <Row>

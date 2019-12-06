@@ -50,7 +50,7 @@ const Artwork = props => {
         <p><span>{artwork.title}</span> - {artwork.artist}</p>
         <p>${artwork.price}.00</p>
         <hr></hr>
-        <h5>About the piece:</h5>
+        <h5>Description:</h5>
         <p>{artwork.description}</p>
         <h5>Mediums:</h5>
         <p>{artwork.medium}</p>
