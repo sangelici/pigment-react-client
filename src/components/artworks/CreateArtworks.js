@@ -46,7 +46,7 @@ const CreateArtwork = props => {
       artwork={artwork}
       handleChange={handleChange}
       handleSubmit={handleSubmit}
-      cancelPath="/"
+      cancelPath="/artworks"
     />
   )
 }
