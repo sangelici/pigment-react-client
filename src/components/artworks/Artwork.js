@@ -43,14 +43,18 @@ const Artwork = props => {
 
   return (
     <div className="row one-artwork">
-      <div>IMAGE:<img src={artwork.fileUrl} width={200} height={200}/> </div>
-      <div className="col-sm-10 col-md-8 mx-auto mt-5">
-        <h2>{artwork.title}</h2>
-        <p>{artwork.artist}</p>
+      <div className="col-sm-6 mx-auto mt-5">
+        <img className="img" src={artwork.fileUrl} width={500} height={600}/>
+      </div>
+      <div className="col-sm-6 mx-auto mt-5">
+        <p><span>{artwork.title}</span> - {artwork.artist}</p>
         <p>${artwork.price}.00</p>
         <hr></hr>
+        <h5>About the piece:</h5>
         <p>{artwork.description}</p>
+        <h5>Mediums:</h5>
         <p>{artwork.medium}</p>
+        <h5>Size:</h5>
         <p>Size: {artwork.size}</p>
         {userId === artwork.owner._id && (
           <Fragment>
@@ -58,7 +62,7 @@ const Artwork = props => {
             <Button onClick={destroy} variant="danger" className="mr-2">Delete</Button>
           </Fragment>
         )}
-        <Button href="#/artworks" variant="secondary">Back</Button>
+        <Button href="#/artworks" variant="secondary" className="mr-2">Back</Button>
       </div>
     </div>
   )
