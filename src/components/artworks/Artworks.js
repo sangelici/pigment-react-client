@@ -20,7 +20,7 @@ const Artworks = props => {
     <Col className="artworks" xs={3} key={artwork._id} as={'a'} href={`#/artworks/${artwork._id}`}>
       <div>
         <img src={artwork.fileUrl} width="300px" height="400px"/>
-        <p>{artwork.title}</p>
+        <p>{artwork.title} - ${artwork.price}</p>
       </div>
     </Col>
   ))
@@ -30,8 +30,14 @@ const Artworks = props => {
       <div>
         <ListGroup className="artworks">
           <h1>Gallery</h1>
+          <Link className="create" to="/create-artwork">
+            +Listing
+          </Link>
           <hr></hr>
-          <Link className="create" to="/create-artwork">+Listing</Link>
+          <div className="gallery-blurb">
+            <h5>Explore the collection!</h5>
+            <p>Our gallery is fully of of pieces made by independent  artists all over</p>
+          </div>
           <Container fluid={true}>
             <Row>
               {artworksJsx}
