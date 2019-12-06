@@ -34,7 +34,7 @@ const CreateArtwork = props => {
         props.alert({ heading: 'Success', message: 'Listing created', variant: 'success' })
         props.history.push(`/artworks/${res.data.artwork._id}`)
       })
-      .catch(props.alert({ heading: 'Error', message: 'Something went wrong, please try again', variant: 'danger' }))
+      .catch(() => props.alert({ heading: 'Error', message: 'Something went wrong, please try again', variant: 'danger' }))
   }
 
   if (createArtworkId) {
