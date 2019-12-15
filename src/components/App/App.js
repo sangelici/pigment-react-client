@@ -17,6 +17,8 @@ import Artworks from '../artworks/Artworks.js'
 import Artwork from '../artworks/Artwork.js'
 import CreateArtwork from '../artworks/CreateArtworks.js'
 import ArtworkEdit from '../artworks/artworkEdit.js'
+// Profile
+import Profile from '../profile/Profile.js'
 
 class App extends Component {
   constructor () {
@@ -90,6 +92,12 @@ class App extends Component {
             <Fragment>
               <Header user={user}/>
               <ArtworkEdit alert={this.alert} user={user} />
+            </Fragment>
+          )} />
+          <AuthenticatedRoute exact path='/profile' user={user} render={() => (
+            <Fragment>
+              <Header user={user}/>
+              <Profile alert={this.alert} user={user} />
             </Fragment>
           )} />
         </main>

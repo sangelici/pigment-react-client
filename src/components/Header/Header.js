@@ -6,6 +6,7 @@ import './Stylesheet.scss'
 const authenticatedOptions = (
   <Fragment>
     <Nav.Link href="#artworks">Gallery</Nav.Link>
+    <Nav.Link href="#profile">Profile</Nav.Link>
     <Nav.Link href="#change-password">Change Password</Nav.Link>
     <Nav.Link href="#sign-out">Sign Out</Nav.Link>
   </Fragment>

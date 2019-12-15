@@ -52,10 +52,10 @@ const Artwork = props => {
         <hr></hr>
         <h5>Description:</h5>
         <p>{artwork.description}</p>
-        <h5>Mediums:</h5>
+        <h5>Medium:</h5>
         <p>{artwork.medium}</p>
         <h5>Size:</h5>
-        <p>Size: {artwork.size}</p>
+        <p>{artwork.size}</p>
         {userId === artwork.owner._id && (
           <Fragment>
             <Button href={`#artworks/${props.match.params.id}/edit`} varient="primary" className="mr-2">Update</Button>
