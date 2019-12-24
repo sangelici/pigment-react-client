@@ -69,9 +69,11 @@ const Artwork = props => {
           <p>{artwork.medium}</p>
           <h5>Size:</h5>
           <p>{artwork.size}</p>
-          <button id="swapHeart" onClick={toggleFavorite} className="mr-2 btn btn-default swap">
-            {favorited ? <FontAwesomeIcon icon={['fas', 'heart']} color="red"/> : <FontAwesomeIcon icon={['far', 'heart']} color="red" /> }
-          </button>
+          {userId !== artwork.owner._id && (
+            <button id="swapHeart" onClick={toggleFavorite} className="mr-2 btn btn-default swap">
+              {favorited ? <FontAwesomeIcon icon={['fas', 'heart']} color="red"/> : <FontAwesomeIcon icon={['far', 'heart']} color="red" /> }
+            </button>
+          )}
           {/* If the artwork belongs to the user, the update/delete options appear */}
           {userId === artwork.owner._id && (
             <Fragment>
