@@ -2,6 +2,8 @@ import React, { useState, useEffect, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig.js'
+import { Container, Row, Col } from 'react-bootstrap'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -52,33 +54,35 @@ const Artwork = props => {
   }
 
   return (
-    <div className="row one-artwork">
-      <div className="col-sm-6 mx-auto mt-5">
-        <img className="img" src={artwork.fileUrl} width={500} height={600}/>
-      </div>
-      <div className="col-sm-6 mx-auto mt-5">
-        <p><span>{artwork.title}</span> - {artwork.artist}</p>
-        <p>${artwork.price}.00</p>
-        <hr></hr>
-        <h5>Description:</h5>
-        <p>{artwork.description}</p>
-        <h5>Medium:</h5>
-        <p>{artwork.medium}</p>
-        <h5>Size:</h5>
-        <p>{artwork.size}</p>
-        <button id="swapHeart" onClick={toggleFavorite} className="mr-2 btn btn-default swap">
-          {favorited ? <FontAwesomeIcon icon={['fas', 'heart']} color="red"/> : <FontAwesomeIcon icon={['far', 'heart']} color="red" /> }
-        </button>
-        {/* If the artwork belongs to the user, the update/delete options appear */}
-        {userId === artwork.owner._id && (
-          <Fragment>
-            <Button href={`#artworks/${props.match.params.id}/edit`} varient="primary" className="mr-2">Update</Button>
-            <Button onClick={destroy} variant="danger" className="mr-2">Delete</Button>
-          </Fragment>
-        )}
-        <Button href="#/artworks" variant="secondary" className="mr-2">Back</Button>
-      </div>
-    </div>
+    <Container fluid={true}>
+      <Row className="one-artwork">
+        <Col sm={6} className=" mx-auto mt-5">
+          <img className="img-thumbnail" src={artwork.fileUrl} width={500} height={600}/>
+        </Col>
+        <Col sm={6} className="mx-auto mt-5">
+          <p><span>{artwork.title}</span> - {artwork.artist}</p>
+          <p>${artwork.price}.00</p>
+          <hr></hr>
+          <h5>Description:</h5>
+          <p>{artwork.description}</p>
+          <h5>Medium:</h5>
+          <p>{artwork.medium}</p>
+          <h5>Size:</h5>
+          <p>{artwork.size}</p>
+          <button id="swapHeart" onClick={toggleFavorite} className="mr-2 btn btn-default swap">
+            {favorited ? <FontAwesomeIcon icon={['fas', 'heart']} color="red"/> : <FontAwesomeIcon icon={['far', 'heart']} color="red" /> }
+          </button>
+          {/* If the artwork belongs to the user, the update/delete options appear */}
+          {userId === artwork.owner._id && (
+            <Fragment>
+              <Button href={`#artworks/${props.match.params.id}/edit`} varient="primary" className="mr-2">Update</Button>
+              <Button onClick={destroy} variant="danger" className="mr-2">Delete</Button>
+            </Fragment>
+          )}
+          <Button href="#/artworks" variant="secondary" className="mr-2">Back</Button>
+        </Col>
+      </Row>
+    </Container>
   )
 }
 
