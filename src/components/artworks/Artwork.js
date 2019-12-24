@@ -2,11 +2,18 @@ import React, { useState, useEffect, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig.js'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
 import Button from 'react-bootstrap/Button'
 
 const Artwork = props => {
   const [artwork, setArtwork] = useState(null)
+  const [favorited, setFavorited] = useState(false)
   const userId = props.user._id
+
+  library.add(fas, far)
 
   useEffect(() => {
     axios({
@@ -35,6 +42,9 @@ const Artwork = props => {
       .catch(() => props.alert({ heading: 'Uh Oh', message: 'Something when wrong!', variant: 'danger' }))
   }
 
+  // toggle favorite method
+  const toggleFavorite = () => setFavorited(!favorited)
+
   // console.log(artwork)
 
   if (!artwork) {
@@ -56,6 +66,9 @@ const Artwork = props => {
         <p>{artwork.medium}</p>
         <h5>Size:</h5>
         <p>{artwork.size}</p>
+        <button id="swapHeart" onClick={toggleFavorite} className="mr-2 btn btn-default swap">
+          {favorited ? <FontAwesomeIcon icon={['fas', 'heart']} color="red"/> : <FontAwesomeIcon icon={['far', 'heart']} color="red" /> }
+        </button>
         {/* If the artwork belongs to the user, the update/delete options appear */}
         {userId === artwork.owner._id && (
           <Fragment>
