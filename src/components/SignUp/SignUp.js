@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Row, Col } from 'react-bootstrap'
 import { withRouter } from 'react-router-dom'
 
 import { signUp, signIn } from '../../api/auth'
@@ -54,8 +55,8 @@ class SignUp extends Component {
     const { name, email, password, passwordConfirmation } = this.state
 
     return (
-      <div className="row">
-        <div className="col-sm-10 col-md-8 mx-auto mt-5 up-and-in">
+      <Row>
+        <Col sm={10} md={8} className="mx-auto mt-5 up-and-in">
           <h3>Sign Up</h3>
           <Form onSubmit={this.onSignUp}>
             <Form.Group controlId="name">
@@ -108,11 +109,11 @@ class SignUp extends Component {
               Submit
             </Button>
           </Form>
-        </div>
-        <div className="col-sm-10 col-md-8 mx-auto mt-5 toggle">
+        </Col>
+        <Col sm={10} md={8} className="mx-auto mt-5 toggle">
           <Nav.Link href="#sign-in">Already have an account? Sign In</Nav.Link>
-        </div>
-      </div>
+        </Col>
+      </Row>
     )
   }
 }
