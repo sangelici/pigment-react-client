@@ -56,6 +56,7 @@ const Artwork = props => {
         <p>{artwork.medium}</p>
         <h5>Size:</h5>
         <p>{artwork.size}</p>
+        {/* If the artwork belongs to the user, the update/delete options appear */}
         {userId === artwork.owner._id && (
           <Fragment>
             <Button href={`#artworks/${props.match.params.id}/edit`} varient="primary" className="mr-2">Update</Button>

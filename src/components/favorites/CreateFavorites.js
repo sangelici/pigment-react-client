@@ -7,6 +7,7 @@ import axios from 'axios'
 import apiUrl from '../../apiConfig.js'
 
 const CreateFavorite = props => {
+
 }
 
 export default withRouter(CreateFavorite)
