@@ -50,16 +50,16 @@ const Artwork = props => {
   // console.log(artwork)
 
   if (!artwork) {
-    return <p>Loading...</p>
+    return <Col sm={8} className="mx-auto mt-5 fa-3x col-sm-offset-2"><FontAwesomeIcon className=" loading-icon fa-spin" icon={['fas', 'spinner']}/></Col>
   }
 
   return (
     <Container fluid={true}>
       <Row className="one-artwork">
-        <Col sm={6} className=" mx-auto mt-5">
-          <img className="img-thumbnail" src={artwork.fileUrl} width={500} height={600}/>
+        <Col sm={6} className=" mx-auto mt-5 col-sm-offset-3">
+          <img className="img-thumbnail" src={artwork.fileUrl} width={400} height={500}/>
         </Col>
-        <Col sm={6} className="mx-auto mt-5">
+        <Col sm={6} className="mx-auto mt-5 col-sm-offset-3">
           <p><span>{artwork.title}</span> - {artwork.artist}</p>
           <p>${artwork.price}.00</p>
           <hr></hr>
