@@ -94,12 +94,12 @@ class App extends Component {
               <ArtworkEdit alert={this.alert} user={user} />
             </Fragment>
           )} />
-          <AuthenticatedRoute exact path='/profile' user={user} render={() => (
+          {/* <AuthenticatedRoute exact path='/profile' user={user} render={() => (
             <Fragment>
               <Header user={user}/>
               <Profile alert={this.alert} user={user} />
             </Fragment>
-          )} />
+          )} /> */}
         </main>
       </Fragment>
     )
