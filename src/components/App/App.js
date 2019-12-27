@@ -18,7 +18,7 @@ import Artwork from '../artworks/Artwork.js'
 import CreateArtwork from '../artworks/CreateArtworks.js'
 import ArtworkEdit from '../artworks/artworkEdit.js'
 // Profile
-import Profile from '../profile/Profile.js'
+// import Profile from '../profile/Profile.js'
 
 class App extends Component {
   constructor () {
