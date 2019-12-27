@@ -64,6 +64,7 @@ class SignIn extends Component {
                 value={email}
                 placeholder="Enter email"
                 onChange={this.handleChange}
+                autoComplete="username"
               />
             </Form.Group>
             <Form.Group controlId="password">
@@ -75,6 +76,7 @@ class SignIn extends Component {
                 type="password"
                 placeholder="Password"
                 onChange={this.handleChange}
+                autoComplete="current-password"
               />
             </Form.Group>
             <Button
