@@ -64,21 +64,20 @@ body {
     border-top: 2px solid rgba(225, 225, 225, .2);
     content: '';
     display: block;
-    // filter: blur(1px);
     height: calc(100% - 20em);
     position: absolute;
-    top: 10em;
     width: calc(100% - 20em);
     z-index: 2;
   }
 
   > .main-title {
-    color: black;
+    color: red;
     font-size: 8.5em;
     font-weight: bolder;
     letter-spacing: .75em;
     padding-left: .75em;
     position: absolute;
+    text-shadow: 1px 2px rgba(0,0,0, .2);
     z-index: 5;
   }
 
@@ -86,7 +85,6 @@ body {
     color: white;
     display: flex;
     font-size: 3.5em;
-    font-weight: bolder;
     letter-spacing: .75em;
     margin-top: 7rem;
     padding-left: .375em;
