@@ -43,9 +43,8 @@ body {
   background: url($image);
   background-position: center;
   background-size: cover;
-  clip-path: inset(10em);
+  clip-path: inset(5em);
   display: flex;
-  filter: blur($blur);
   height: 93vh;
   justify-content: center;
   width: 100vw;
@@ -66,10 +65,9 @@ body {
     content: '';
     display: block;
     // filter: blur(1px);
-    height: calc(100% - 20em);
+    height: calc(100% - 10em);
     position: absolute;
-    top: 10em;
-    width: calc(100% - 20em);
+    width: calc(100% - 10em);
     z-index: 2;
   }
 

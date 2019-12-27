@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom'
 import { signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
 
+import { Container, Row, Col } from 'react-bootstrap'
 import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -51,46 +52,49 @@ class SignIn extends Component {
     const { email, password } = this.state
 
     return (
-      <div className="row sign-in">
-        <div className="col-sm-10 col-md-8 mx-auto mt-5 up-and-in">
-          <h3>Sign In</h3>
-          <Form onSubmit={this.onSignIn}>
-            <Form.Group controlId="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                required
-                type="email"
-                name="email"
-                value={email}
-                placeholder="Enter email"
-                onChange={this.handleChange}
-                autoComplete="username"
-              />
-            </Form.Group>
-            <Form.Group controlId="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                required
-                name="password"
-                value={password}
-                type="password"
-                placeholder="Password"
-                onChange={this.handleChange}
-                autoComplete="current-password"
-              />
-            </Form.Group>
-            <Button
-              variant="primary"
-              type="submit"
-            >
-              Submit
-            </Button>
-          </Form>
-        </div>
-        <div className="col-sm-10 col-md-8 mx-auto mt-5 toggle">
-          <Nav.Link href="#sign-up">Don&apos;t have an account yet? Sign Up</Nav.Link>
-        </div>
-      </div>
+      <Container>
+        <Row className="sign-in">
+          <Col sm={10} md={8} className="mx-auto up-and-in">
+            <h3>SIGN IN</h3>
+            <br></br>
+            <Form onSubmit={this.onSignIn}>
+              <Form.Group controlId="email">
+                <Form.Control
+                  required
+                  type="email"
+                  name="email"
+                  value={email}
+                  placeholder="Email..."
+                  onChange={this.handleChange}
+                  autoComplete="username"
+                  size="lg"
+                />
+              </Form.Group>
+              <Form.Group controlId="password">
+                <Form.Control
+                  required
+                  name="password"
+                  value={password}
+                  type="password"
+                  placeholder="Password..."
+                  onChange={this.handleChange}
+                  autoComplete="current-password"
+                  size="lg"
+                />
+              </Form.Group>
+              <Button
+                className="mt-3 btn-lg btn-block"
+                variant="primary"
+                type="submit"
+                size="lg"
+              >
+                Login
+              </Button>
+              <Nav.Link className="mt-5 toggle" href="#sign-up">Don&apos;t have an account yet? Sign Up!</Nav.Link>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
     )
   }
 }
