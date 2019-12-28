@@ -1,12 +1,18 @@
 a {
+  color: white;
   font-weight: bolder;
   text-decoration: none;
+
+  &:hover{
+    background-color: transparent !important;
+  }
+
 }
 
 footer {
   text-align: center;
-  background: url('../images/paint-stroke.png');
-  background-size: 150% 180%;
+  background: url('../images/red-paint-stroke.jpg');
+  background-size: 100% 100%;
   background-position: center;
   color: white;
 }
@@ -14,7 +20,7 @@ footer {
 h5 {
   margin-top: 20px;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 .footer-content {

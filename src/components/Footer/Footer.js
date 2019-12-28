@@ -7,32 +7,26 @@ const Footer = props => (
   <MDBFooter color="blue" className="font-small p-3 col-md-offset-3">
     <MDBContainer fluid className="text-center text-md-left">
       <MDBRow className="footer-row">
-        <MDBCol className="footer-content" md="3">
-          <h5 className="title">PIGMENT </h5>
-          <p>
-            Pigment is a home for any creator. It&#39;s a marketplace for artists of any level to display and sell their works.
-          </p>
-        </MDBCol>
-        <MDBCol className="footer-content" md="3">
+        <MDBCol className="footer-content col-md-offset-3" md="6">
           <h5 className="title">About</h5>
           <li className="list-unstyled">
-            <a href="#!">Pigment Inc.</a>
+            <a href="#artworks">Pigment Inc.</a>
           </li>
           <li className="list-unstyled">
-            <a href="#!">Careers</a>
+            <a href="#artworks">Careers</a>
           </li>
           <li className="list-unstyled">
-            <a href="#!">Policies</a>
+            <a href="#artworks">Policies</a>
           </li>
           <li className="list-unstyled">
-            <a href="#!">Contact Us</a>
+            <a href="#artworks">Contact Us</a>
           </li>
         </MDBCol>
       </MDBRow>
     </MDBContainer>
     <div className="footer-copyright text-center py-3">
       <MDBContainer fluid>
-        &copy; {new Date().getFullYear()} Copyright: <a href="https://www.MDBootstrap.com"> Pigment</a>
+        &copy; {new Date().getFullYear()} Copyright: <a href="#/artworks"> Pigment</a>
       </MDBContainer>
     </div>
   </MDBFooter>
