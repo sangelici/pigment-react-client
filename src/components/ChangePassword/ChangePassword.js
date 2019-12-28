@@ -54,7 +54,6 @@ class ChangePassword extends Component {
           <h3>Change Password</h3>
           <Form onSubmit={this.onChangePassword}>
             <Form.Group controlId="oldPassword">
-              <Form.Label>Old password</Form.Label>
               <Form.Control
                 required
                 name="oldPassword"
@@ -62,10 +61,11 @@ class ChangePassword extends Component {
                 type="password"
                 placeholder="Old Password"
                 onChange={this.handleChange}
+                autoComplete="current-password"
+                size="lg"
               />
             </Form.Group>
             <Form.Group controlId="newPassword">
-              <Form.Label>New Password</Form.Label>
               <Form.Control
                 required
                 name="newPassword"
@@ -73,6 +73,8 @@ class ChangePassword extends Component {
                 type="password"
                 placeholder="New Password"
                 onChange={this.handleChange}
+                autoComplete="new-password"
+                size="lg"
               />
             </Form.Group>
             <Button
