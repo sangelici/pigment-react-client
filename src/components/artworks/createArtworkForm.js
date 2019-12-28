@@ -1,14 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import { Col } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import InputGroup from 'react-bootstrap/InputGroup'
 import './Stylesheet.scss'
 
 const ArtworkForm = ({ artwork, handleChange, handleSubmit, cancelPath }) => (
   <div className="row">
-    <div className="col-sm-10 col-md-8 mx-auto mt-5 up-and-in">
+    <div className="col-sm-10 col-md-8 mx-auto mt-0 up-and-in">
       <h3>New Listing</h3>
+      <br></br>
       <Form onSubmit={handleSubmit}>
         <Form.Group encType="multipart/form-data">
           <Form.Label>Image:</Form.Label>
@@ -16,85 +18,101 @@ const ArtworkForm = ({ artwork, handleChange, handleSubmit, cancelPath }) => (
             type="file"
             name="file"
             onChange={handleChange}
+            size="lg"
           />
         </Form.Group>
         <Form.Group>
-          <Form.Label htmlFor="title">Title:</Form.Label>
           <Form.Control
             id="title"
-            placeholder="Title..."
+            placeholder="Artwork Title..."
             value={artwork.title}
             name="title"
             onChange={handleChange}
+            size="lg"
           />
         </Form.Group>
         <Form.Group>
-          <Form.Label htmlFor="artist">Artist:</Form.Label>
           <Form.Control
             id="artist"
             placeholder="Artist..."
             value={artwork.artist}
             name="artist"
             onChange={handleChange}
+            size="lg"
           />
         </Form.Group>
         <Form.Group>
-          <Form.Label htmlFor="medium">Medium:</Form.Label>
           <Form.Control
             required
             id="medium"
-            placeholder="Oil, Acrylic..."
+            placeholder="Medium: oil, acrylic..."
             value={artwork.medium}
             name="medium"
             onChange={handleChange}
+            size="lg"
           />
         </Form.Group>
+        <Form.Row>
+          <Form.Group as={Col}>
+            <Form.Control
+              required
+              id="size"
+              placeholder="Size: #in x #in..."
+              value={artwork.size}
+              name="size"
+              onChange={handleChange}
+              size="lg"
+            />
+          </Form.Group>
+          <InputGroup className="mb-3" as={Col} id="price">
+            <InputGroup.Prepend>
+              <InputGroup.Text style={{ color: 'red' }}>$</InputGroup.Text>
+            </InputGroup.Prepend>
+            <Form.Control
+              aria-label="Amount (to the nearest dollar)"
+              required
+              id="price"
+              placeholder="0000"
+              type="number"
+              value={artwork.price}
+              name="price"
+              onChange={handleChange}
+              size="lg"
+            />
+            <InputGroup.Append>
+              <InputGroup.Text>.00</InputGroup.Text>
+            </InputGroup.Append>
+          </InputGroup>
+        </Form.Row>
+        <br></br>
         <Form.Group>
-          <Form.Label htmlFor="size">Size:</Form.Label>
+          <Form.Label>Add A Description</Form.Label>
           <Form.Control
             required
-            id="size"
-            placeholder="#in x #in..."
-            value={artwork.size}
-            name="size"
+            id="description"
+            placeholder="Add A Description..."
+            value={artwork.description}
+            name="description"
             onChange={handleChange}
+            as="textarea"
+            rows="3"
+            size="lg"
           />
         </Form.Group>
-        <Form.Group>
-          <Form.Label htmlFor="price">Price:</Form.Label>
-          <Form.Control
-            required
-            id="price"
-            placeholder="0000"
-            type="number"
-            value={artwork.price}
-            name="price"
-            onChange={handleChange}
-          />
-        </Form.Group>
-        <Form.Label htmlFor="description">Description:</Form.Label>
-        <br></br>
-        <textarea
-          required
-          id="description"
-          placeholder="Description..."
-          value={artwork.description}
-          name="description"
-          onChange={handleChange}
-          rows="4"
-        >
-        </textarea>
-        <br></br>
         <br></br>
         <Button
+          className="mx-2"
           variant="primary"
           type="submit"
+          size="lg"
         >
           Submit
         </Button>
         <Link to={cancelPath}>
           <Button
-            variant="primary"
+            className="mx-2"
+            variant="danger"
+            size="lg"
           >
             Cancel
           </Button>
