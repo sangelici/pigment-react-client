@@ -8,9 +8,17 @@
 }
 
 nav {
-  background-color: rgba(4, 138, 255, .8);
-  position: fixed;
+  background-color: rgba(20, 30, 250, .8);
   width: 100vw;
+  z-index: 100;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgb(255, 255, 255);
+}
+
+.navbar-dark .navbar-text {
+    color: rgb(255, 255, 255);
 }
 
 span {

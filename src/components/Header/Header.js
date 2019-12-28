@@ -26,7 +26,7 @@ const unauthenticatedOptions = (
 
 const Header = ({ user }) => (
   <Navbar variant="dark" expand="md">
-    <Navbar.Brand style={{ fontWeight: 'bolder' }} href="#/artworks">
+    <Navbar.Brand className="ml-3"style={{ fontWeight: 'bolder', fontSize: '2rem', letterSpacing: '.5rem' }} href="#/artworks">
       PGMT
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
