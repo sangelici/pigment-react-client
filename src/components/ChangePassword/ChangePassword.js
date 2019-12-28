@@ -52,6 +52,7 @@ class ChangePassword extends Component {
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5 up-and-in">
           <h3>Change Password</h3>
+          <br></br>
           <Form onSubmit={this.onChangePassword}>
             <Form.Group controlId="oldPassword">
               <Form.Control
@@ -78,8 +79,10 @@ class ChangePassword extends Component {
               />
             </Form.Group>
             <Button
+              className="mt-4 btn-lg btn-block"
               variant="primary"
               type="submit"
+              size="lg"
             >
               Submit
             </Button>
