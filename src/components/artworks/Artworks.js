@@ -2,7 +2,7 @@ import React, { useEffect, useState, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { Col } from 'react-bootstrap'
 import ListGroup from 'react-bootstrap/ListGroup'
-import { MDBCol, MDBContainer, MDBRow, MDBFooter } from 'mdbreact'
+import { MDBContainer, MDBRow } from 'mdbreact'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import './Stylesheet.scss'
@@ -44,39 +44,6 @@ const Artworks = props => {
           </MDBRow>
         </MDBContainer>
       </ListGroup>
-      <MDBFooter color="blue" className="font-small p-3 col-md-offset-3">
-        <MDBContainer fluid className="text-center text-md-left">
-          <MDBRow>
-            <MDBCol className="footer-content" md="3">
-              <h5 className="title">PIGMENT </h5>
-              <p>
-                Here you can use rows and columns here to organize your footer
-                content.
-              </p>
-            </MDBCol>
-            <MDBCol className="footer-content" md="3">
-              <h5 className="title">About</h5>
-              <li className="list-unstyled">
-                <a href="#!">Pigment Inc.</a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!">Careers</a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!">Policies</a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!">Contact Us</a>
-              </li>
-            </MDBCol>
-          </MDBRow>
-        </MDBContainer>
-        <div className="footer-copyright text-center py-3">
-          <MDBContainer fluid>
-            &copy; {new Date().getFullYear()} Copyright: <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
-          </MDBContainer>
-        </div>
-      </MDBFooter>
     </Fragment>
   )
 }

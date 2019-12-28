@@ -24,22 +24,25 @@ const unauthenticatedOptions = (
 //   </Fragment>
 // )
 
-const Header = ({ user }) => (
-  <Navbar variant="dark" expand="md">
-    <Navbar.Brand className="ml-3"style={{ fontWeight: 'bolder', fontSize: '2rem', letterSpacing: '.5rem' }} href="#/artworks">
-      PGMT
-    </Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="ml-auto">
-        {user && <span className="navbar-text mr-5">
-        Welcome, {user.email} </span> }
-        {/* console.log(user) */}
-        {/* {alwaysOptions} */}
-        { user ? authenticatedOptions : unauthenticatedOptions }
-      </Nav>
-    </Navbar.Collapse>
-  </Navbar>
-)
+const Header = ({ user }) => {
+  // if (window.location.pathname === '/sign-in') return null
+  return (
+    <Navbar variant="dark" expand="md">
+      <Navbar.Brand className="ml-3"style={{ fontWeight: 'bolder', fontSize: '2rem', letterSpacing: '.5rem' }} href="#/artworks">
+        PGMT
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="ml-auto">
+          {user && <span className="navbar-text mr-5">
+          Welcome, {user.email} </span> }
+          {/* console.log(user) */}
+          {/* {alwaysOptions} */}
+          { user ? authenticatedOptions : unauthenticatedOptions }
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  )
+}
 
 export default Header

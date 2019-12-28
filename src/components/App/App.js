@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom'
 import AuthenticatedRoute from '../AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from '../AutoDismissAlert/AutoDismissAlert'
 import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
 import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
@@ -74,12 +75,14 @@ class App extends Component {
             <Fragment>
               <Header user={user}/>
               <Artworks alert={this.alert}/>
+              <Footer />
             </Fragment>
           )} />
           <AuthenticatedRoute exact path='/artworks/:id' user={user} render={() => (
             <Fragment>
               <Header user={user}/>
               <Artwork alert={this.alert} user={user}/>
+              <Footer />
             </Fragment>
           )} />
           <AuthenticatedRoute exact path='/create-artwork' user={user} render={() => (
@@ -98,6 +101,7 @@ class App extends Component {
             <Fragment>
               <Header user={user}/>
               <Profile alert={this.alert} user={user} />
+              <Footer />
             </Fragment>
           )} /> */}
         </main>
