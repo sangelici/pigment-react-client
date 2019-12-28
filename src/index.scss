@@ -5,21 +5,26 @@ form {
   text-align: center;
 }
 
-.container-fluid{
+.container-fluid {
   padding: 0;
 }
 
+.form-group input {
+  border: 0;
+  border-bottom: 2px solid;
+}
+
 .toggle {
+  background-color: 'white';
   display: flex;
-  justify-content: center;
-  background-color: rgb(255, 255, 255);
   font-family: 'Rajdhani', sans-serif;
   font-weight: bolder;
+  justify-content: center;
   padding: 20px;
 }
 
 .up-and-in {
-  background-color: rgb(255, 255, 255);
+  background-color: 'white';
   border: 1px solid black;
   margin-top: 10vh;
   padding: 55px 50px;
@@ -31,9 +36,4 @@ form {
     justify-content: center;
     letter-spacing: 1.25rem;
   }
-}
-
-.form-group input {
-  border: none;
-  border-bottom: 2px solid;
 }

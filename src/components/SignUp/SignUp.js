@@ -79,6 +79,7 @@ class SignUp extends Component {
                   value={email}
                   placeholder="Email..."
                   onChange={this.handleChange}
+                  autoComplete="username"
                   size="lg"
                 />
               </Form.Group>
@@ -91,6 +92,7 @@ class SignUp extends Component {
                     type="password"
                     placeholder="Password..."
                     onChange={this.handleChange}
+                    autoComplete="new-password"
                     size="lg"
                   />
                 </Form.Group>
@@ -102,6 +104,7 @@ class SignUp extends Component {
                     type="password"
                     placeholder="Confirm Password..."
                     onChange={this.handleChange}
+                    autoComplete="new-password"
                     size="lg"
                   />
                 </Form.Group>
