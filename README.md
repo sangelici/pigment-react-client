@@ -40,6 +40,11 @@ Working through the API was smooth sailing when it came to the basic set up. I u
 
 Overall, this project was a major challenge, and I pushed myself to be aware of each step that I took as I built my app. This means, on top of all my lists, I worked hard to keep track of my work flow. Each feature was given a branch, and merged with development upon completion. I also created issues within my repository to keep track of my research and progress of large challenges as I worked. I feel as though I pushed myself on this project, and I'm proud of what I could accomplishments.
 
+## Update
+While I continue to study React further, I've returned to my application to refactor and implement Redux, Stripe API, and more to mold Pigment further into being the e-commerce site I dreamed it to be.
+
+I've made big styling changes by simplifying the look but keeping with original aesthetic, and working hard to refactor using bootstrap classes throughout. The goal is to continuously turn Pigment into a user friendly site with lively personality.
+
 ## Future Goals
 - Implement favorites resource into the front end.
   - This will allow users to favorite arworks and store them in a favorites list that they can reference
@@ -47,7 +52,18 @@ Overall, this project was a major challenge, and I pushed myself to be aware of 
 - Build a cart resource so users can select an artwork they like and add it to their carts for purchase
 - Build a checkout for once a user settles of their cart selections and wants to continue with their purchase
 
-## App Preview
+## Updated Preview
+<img src="pigment-gif.gif"
+     alt="Pigment Landing Page"
+     style="float: left; margin-right: 10px;" />
+<img src="pigment-gallery.png"
+     alt="Pigment Landing Page"
+     style="float: left; margin-right: 10px;" />
+<img src="pigment-artwork.png"
+     alt="Pigment Landing Page"
+     style="float: left; margin-right: 10px;" />
+
+## Original Preview
 <img src="pgmt-landing.png"
      alt="Pigment Landing Page"
      style="float: left; margin-right: 10px;" />
