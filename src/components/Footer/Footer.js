@@ -10,16 +10,16 @@ const Footer = props => (
         <MDBCol className="footer-content col-md-offset-3" md="6">
           <h5 className="title">About</h5>
           <li className="list-unstyled">
-            <a href="#artworks">Pigment Inc.</a>
+            <a className="link" href="#artworks">Pigment Inc.</a>
           </li>
           <li className="list-unstyled">
-            <a href="#artworks">Careers</a>
+            <a className="link" href="#artworks">Careers</a>
           </li>
           <li className="list-unstyled">
-            <a href="#artworks">Policies</a>
+            <a className="link" href="#artworks">Policies</a>
           </li>
           <li className="list-unstyled">
-            <a href="#artworks">Contact Us</a>
+            <a className="link" href="#artworks">Contact Us</a>
           </li>
         </MDBCol>
       </MDBRow>

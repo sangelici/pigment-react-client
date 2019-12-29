@@ -1,8 +1,9 @@
-a {
+.link {
   color: white;
   font-weight: bolder;
   text-decoration: none;
 
+// CAUSING PRICES
   &:hover{
     background-color: transparent !important;
   }

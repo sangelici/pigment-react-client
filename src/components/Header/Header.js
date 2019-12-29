@@ -25,7 +25,7 @@ const unauthenticatedOptions = (
 // )
 
 const Header = ({ user }) => {
-  // if (window.location.pathname === '/sign-in') return null
+  // if (window.location.pathname === '/') return null
   return (
     <Navbar variant="dark" expand="md">
       <Navbar.Brand className="ml-3"style={{ fontWeight: 'bolder', fontSize: '2rem', letterSpacing: '.5rem' }} href="#/artworks">
