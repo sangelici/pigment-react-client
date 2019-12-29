@@ -98,11 +98,15 @@ span.input-group-text {
   }
 }
 
-  .row{
-    display: flex;
-    justify-content: center;
-    background-color: white;
-  }
+.row{
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+div.image {
+  text-align: center;
+}
 
 // Update View
 textarea {

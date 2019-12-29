@@ -56,7 +56,7 @@ const Artwork = props => {
   return (
     <Container fluid={true}>
       <Row className="one-artwork">
-        <Col sm={6} className=" mx-auto mt-5 col-sm-offset-3">
+        <Col sm={6} className=" mx-auto mt-5 col-sm-offset-3 image">
           <img className="img-thumbnail" src={artwork.fileUrl} width={400} height={500}/>
         </Col>
         <Col sm={6} className="mx-auto mt-5 col-sm-offset-3">
