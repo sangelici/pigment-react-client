@@ -5,10 +5,13 @@ import './FooterStylesheet.scss'
 
 const Footer = props => (
   <MDBFooter color="blue" className="font-small p-3 col-md-offset-3">
-    <MDBContainer fluid className="text-center text-md-left">
+    <MDBContainer fluid className="text-center">
+      <h5>ABOUT PIGMENT</h5>
+      <p>Pigment is the on stop shop for purusing hundreds of exhibits put together by artists all over.</p>
+    </MDBContainer>
+    <MDBContainer fluid className="text-center">
       <MDBRow className="footer-row">
         <MDBCol className="footer-content col-md-offset-3" md="6">
-          <h5 className="title">About</h5>
           <li className="list-unstyled">
             <a className="link" href="#artworks">Pigment Inc.</a>
           </li>
