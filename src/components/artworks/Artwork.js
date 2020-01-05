@@ -4,6 +4,8 @@ import axios from 'axios'
 import apiUrl from '../../apiConfig.js'
 import { Container, Row, Col } from 'react-bootstrap'
 
+import Footer from '../Footer/Footer'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -84,6 +86,7 @@ const Artwork = props => {
           <Button href="#/artworks" variant="secondary" className="mr-2">Back</Button>
         </Col>
       </Row>
+      <Footer />
     </Container>
   )
 }

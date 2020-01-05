@@ -4,7 +4,6 @@ import { Route } from 'react-router-dom'
 import AuthenticatedRoute from '../AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from '../AutoDismissAlert/AutoDismissAlert'
 import Header from '../Header/Header'
-import Footer from '../Footer/Footer'
 import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
@@ -53,6 +52,7 @@ class App extends Component {
           />
         ))}
         <main className="container-fluid">
+          <Header user={user}/>
           <Route exact path='/' render={() => (
             <Homepage />
           )} />
@@ -67,43 +67,30 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <Fragment>
-              <Header user={user}/>
               <ChangePassword alert={this.alert} user={user} />
             </Fragment>
           )} />
           <AuthenticatedRoute exact path='/artworks' user={user} render={() => (
             <Fragment>
-              <Header user={user}/>
               <Artworks alert={this.alert}/>
-              <Footer />
+
             </Fragment>
           )} />
           <AuthenticatedRoute exact path='/artworks/:id' user={user} render={() => (
             <Fragment>
-              <Header user={user}/>
               <Artwork alert={this.alert} user={user}/>
-              <Footer />
             </Fragment>
           )} />
           <AuthenticatedRoute exact path='/create-artwork' user={user} render={() => (
             <Fragment>
-              <Header user={user}/>
               <CreateArtwork alert={this.alert} user={user} />
             </Fragment>
           )} />
           <AuthenticatedRoute exact path='/artworks/:id/edit' user={user} render={() => (
             <Fragment>
-              <Header user={user}/>
               <ArtworkEdit alert={this.alert} user={user} />
             </Fragment>
           )} />
-          {/* <AuthenticatedRoute exact path='/profile' user={user} render={() => (
-            <Fragment>
-              <Header user={user}/>
-              <Profile alert={this.alert} user={user} />
-              <Footer />
-            </Fragment>
-          )} /> */}
         </main>
       </Fragment>
     )

@@ -5,6 +5,9 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import { MDBContainer, MDBRow } from 'mdbreact'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
+
+import Footer from '../Footer/Footer'
+
 import './Stylesheet.scss'
 
 const Artworks = props => {
@@ -44,6 +47,7 @@ const Artworks = props => {
           </MDBRow>
         </MDBContainer>
       </ListGroup>
+      <Footer />
     </Fragment>
   )
 }
